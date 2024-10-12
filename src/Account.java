@@ -49,6 +49,7 @@ public class Account {
                 System.out.println("Не хватает средст для снятия. На данный момент есть: " + accountBalance);
                 balanceIncreased.await();
             }
+            System.out.println("До снятия: " + accountBalance);
             accountBalance -= amount;
         } finally {
             LOCK_OBJECT.unlock();
